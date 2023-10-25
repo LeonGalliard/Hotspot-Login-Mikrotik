@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hotspot Manager</title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+
+    <!-- Style Core -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <style>
+        .skyscrape-bg {
+            overflow: hidden;
+            border-radius: var(--bs-border-radius-lg);
+            background: url('./foto.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100%;
+        }
+
+        body {
+            background: #f2f2f2 url('https://assets.siakadcloud.com/assets/v1/img/pattern/pat_04.png') repeat;
+        }
+    </style>
+</head>
+
+<body class="logout-page">
+    <div class="container">
+        <div class="row justify-content-center min-vh-100 align-items-center">
+            <div class="col-md-9">
+                <div class="card card-body p-3 rounded-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skyscrape-bg"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="./1124.jpg" height="100px" class="mx-auto mb-3 d-block" alt="Logo PNM" />
+
+                            <h1 class="text-center h2 mb-0">Hotspot Logout</h1>
+                            <td align="center">
+                                <br><b>Kamu baru saja logout!</b> <br>
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td align="right">user name</td>
+                                        <td>$(username)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">IP address</td>
+                                        <td>$(ip)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">MAC address</td>
+                                        <td>$(mac)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">session time</td>
+                                        <td>$(uptime)</td>
+                                    </tr>
+                                    $(if session-time-left)
+                                    <tr>
+                                        <td align="right">time left</td>
+                                        <td>$(session-time-left)</td>
+                                    </tr>
+                                    $(endif)
+                                    <tr>
+                                        <td align="right">bytes up/down:</td>
+                                        <td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                                    <div class="d-grid gap-2 mx-auto">
+                                        <button class="btn btn-primary" type="submit" value="log in">Login</button>
+                                    </div>
+                                </form>
+                            </td>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script type="text/javascript" src="md5.js"></script>
+    <script type="text/javascript">
+        function openLogin() {
+            window.location.href = "login.html";
+            return false;
+        }
+    </script>
+</body>
+
+</html>
